@@ -3,6 +3,7 @@
 //layout para todas las paginas
 // pasar porps adicionales
 import Layout from "@components/Layout/Layout"
+import 'semantic-ui-css/semantic.min.css'
 
 function MyApp({ Component, pageProps }) {
 
