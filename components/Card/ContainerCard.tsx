@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
-import { CartItemType } from 'Store/StoreCard'
+import Link from 'next/link'
 
 export interface TProduct {
     attributes: any
@@ -21,24 +21,30 @@ const ContainerCard: FC<ContainerCardProps> = ({ products }) => {
 
     return (
         <>
-            <Card>
-                <Image src={products[0]?.image} wrapped ui={false} />
-                <Card.Content>
-                    <Card.Header>Matthew</Card.Header>
-                    <Card.Meta>
-                        <span className='date'>Joined in 2015</span>
-                    </Card.Meta>
-                    <Card.Description>
-                        {products[0]?.name}
-                    </Card.Description>
-                </Card.Content>
-                <Card.Content extra>
-                    <a>
-                        <Icon name='user' />
-                        {products[0]?.price}
-                    </a>
-                </Card.Content>
-            </Card>
+            {products.map(product => {
+                return (
+                    <Link href={`/product/${product.id}`}>
+                        <Card>
+                            <Image src={product?.image} wrapped ui={false} />
+                            <Card.Content>
+                                <Card.Header>Matthew</Card.Header>
+                                <Card.Meta>
+                                    <span className='date'>Joined in 2015</span>
+                                </Card.Meta>
+                                <Card.Description>
+                                    {product?.name}
+                                </Card.Description>
+                            </Card.Content>
+                            <Card.Content extra>
+                                <a>
+                                    <Icon name='user' />
+                                    {product?.price}
+                                </a>
+                            </Card.Content>
+                        </Card>
+                    </Link>
+                )
+            })}
         </>
     )
 }

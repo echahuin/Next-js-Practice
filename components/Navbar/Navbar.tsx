@@ -1,17 +1,31 @@
 import React from 'react'
-import Link from 'next/link'
+import Link from 'next/link';
+import { Menu, Icon } from 'semantic-ui-react';
+
 
 export default function Navbar() {
   return (
     <nav>
-      <menu>
+      <Menu pointing secondary>
         <Link href="/">
-          <a>Home</a>
+          <Menu.Item
+            name='Home'
+          //active={activeItem === 'home'}
+          //  onClick={this.handleItemClick}
+          />
         </Link>
         <Link href="/about">
-          <a>About</a>
+          <Menu.Item
+            position='right'
+            name='L'
+          //active={activeItem === 'home'}
+          //  onClick={this.handleItemClick}
+          >
+            <Icon name='shop' />
+          </Menu.Item>
         </Link>
-      </menu>
-    </nav>
+
+      </Menu>
+    </nav >
   )
 }
