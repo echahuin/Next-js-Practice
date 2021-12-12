@@ -7,24 +7,21 @@ const HomePage = () => {
   const [productList, setproductList] = useState([])
 
   useEffect(() => {
-    window
-      .fetch('api/avo')
+    fetch('api/avo')
       .then(response => response.json())
-      .then(({data, length})=>
-        {
-          // type data = object;
-          setproductList(data)
-          console.log(data)
-        }
-      )
-      return ()=>{
-
+      .then(({ data, length }) => {
+        // type data = object;
+        setproductList(data)
       }
+      )
+    return () => {
+
+    }
   }, [])
 
   return (
     <div>
-      <ContainerCard  products={productList}/>
+      <ContainerCard products={productList} />
     </div>
   )
 }
