@@ -26,7 +26,7 @@ const ContainerCard: FC<ContainerCardProps> = ({ products }) => {
                 <Card.Content>
                     <Card.Header>Matthew</Card.Header>
                     <Card.Meta>
-                        <span className='date'>Joined in 2015</span>
+                        <span className='date'>Joined in 2021</span>
                     </Card.Meta>
                     <Card.Description>
                         {products[0]?.name}
